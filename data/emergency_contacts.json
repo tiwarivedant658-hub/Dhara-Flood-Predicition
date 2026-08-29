@@ -1,0 +1,234 @@
+{
+  "national": [
+    {
+      "name": "Emergency Response Support System",
+      "service": "Police / Fire / Ambulance / Disaster",
+      "phone": "112",
+      "type": "emergency"
+    },
+    {
+      "name": "NDRF Disaster Distress Helpline",
+      "service": "NDRF humanitarian assistance / disaster distress support",
+      "phone": "+91-9711077372",
+      "type": "ndrf"
+    }
+  ],
+  "states": {
+    "Himachal Pradesh": {
+      "state_contacts": [
+        {
+          "name": "District Disaster Control Room",
+          "service": "State-wide emergency number",
+          "phone": "1077",
+          "type": "disaster"
+        }
+      ],
+      "districts": {
+        "Shimla": {
+          "district_office": "0177-2655988",
+          "police": "100"
+        },
+        "Kullu": {
+          "district_office": "01902-222727",
+          "police": "100"
+        },
+        "Mandi": {
+          "district_office": "01905-225201",
+          "police": "100"
+        },
+        "Kangra": {
+          "district_office": "01892-222103",
+          "police": "100"
+        },
+        "Chamba": {
+          "district_office": "01899-225371",
+          "police": "100"
+        },
+        "Kinnaur": {
+          "district_office": "01786-222252",
+          "police": "100"
+        }
+      },
+      "source_note": "District disaster-management contacts from Himachal Pradesh government disaster/mock-drill guidance; police uses the published emergency number 100. Verify before production use.",
+      "official_links": [
+        {
+          "name": "Himachal Pradesh Disaster Management",
+          "service": "Official HPSDMA disaster-management portal",
+          "url": "https://hpdams.hp.gov.in/",
+          "type": "website"
+        }
+      ]
+    },
+    "Uttarakhand": {
+      "state_contacts": [
+        {
+          "name": "State Emergency Operation Centre",
+          "service": "SEOC",
+          "phone": "1070",
+          "type": "disaster"
+        },
+        {
+          "name": "District Emergency Operation Centres",
+          "service": "DEOC",
+          "phone": "1077",
+          "type": "disaster"
+        },
+        {
+          "name": "Emergency Response Support System",
+          "service": "Police / Fire / Ambulance / Disaster",
+          "phone": "112",
+          "type": "emergency"
+        }
+      ],
+      "districts": {
+        "Dehradun": {
+          "district_office": "0135-2726066",
+          "police": "112"
+        },
+        "Nainital": {
+          "district_office": "05942-231179",
+          "police": "112"
+        },
+        "Rudraprayag": {
+          "district_office": "01364-233727",
+          "police": "112"
+        },
+        "Chamoli": {
+          "district_office": "01372-251437",
+          "police": "112"
+        },
+        "Pithoragarh": {
+          "district_office": "05964-228050",
+          "police": "112"
+        },
+        "Uttarkashi": {
+          "district_office": "01374-222722",
+          "police": "112"
+        },
+        "Haridwar": {
+          "district_office": "01334-223999",
+          "police": "112"
+        },
+        "Tehri Garhwal": {
+          "district_office": "01376-233433",
+          "police": "112"
+        }
+      },
+      "source_note": "Uttarakhand State Disaster Management Authority and state/district disaster-management directory. Verify before production use.",
+      "official_links": [
+        {
+          "name": "Uttarakhand State Disaster Management Authority",
+          "service": "Official USDMA disaster-management portal",
+          "url": "https://usdma.uk.gov.in/",
+          "type": "website"
+        }
+      ]
+    },
+    "Ladakh": {
+      "state_contacts": [
+        {
+          "name": "Ladakh Police Headquarters",
+          "service": "Police Control Room",
+          "phone": "01982-260887",
+          "type": "police"
+        },
+        {
+          "name": "Emergency Response Support System",
+          "service": "Police / Fire / Medical / Disaster",
+          "phone": "112",
+          "type": "emergency"
+        }
+      ],
+      "districts": {
+        "Leh": {
+          "district_office": "01982-258880",
+          "police": "01982-258880"
+        },
+        "Kargil": {
+          "district_office": "01985-232275",
+          "police": "01985-232275"
+        }
+      },
+      "source_note": "Ladakh Administration and Ladakh Police emergency/UTDRF pages. Verify before production use.",
+      "official_links": [
+        {
+          "name": "Ladakh Disaster Management Authority",
+          "service": "Official LDMA disaster-management portal",
+          "url": "https://ldma.ladakh.gov.in/",
+          "type": "website"
+        },
+        {
+          "name": "Ladakh Administration",
+          "service": "Official UT government portal and citizen services",
+          "url": "https://ladakh.gov.in/",
+          "type": "website"
+        }
+      ]
+    },
+    "Jammu & Kashmir": {
+      "state_contacts": [
+        {
+          "name": "Emergency Response Support System",
+          "service": "Police / Fire / Ambulance / Disaster",
+          "phone": "112",
+          "type": "emergency"
+        }
+      ],
+      "districts": {
+        "Srinagar": {
+          "district_office": "0194-2477033",
+          "police": "0194-2477567"
+        },
+        "Jammu": {
+          "district_office": "0191-2546773",
+          "police": "112"
+        },
+        "Anantnag": {
+          "district_office": "01932-227112",
+          "police": "01932-225870"
+        },
+        "Kishtwar": {
+          "district_office": "01995-259555",
+          "police": "112"
+        },
+        "Poonch": {
+          "district_office": "112",
+          "police": "112"
+        },
+        "Baramulla": {
+          "district_office": "112",
+          "police": "112"
+        }
+      },
+      "source_note": "Where a current district-specific number was not verified from a primary source, the interface falls back to 112 rather than inventing a local number. Verify before production use.",
+      "official_links": [
+        {
+          "name": "J&K Disaster Management Authority",
+          "service": "Official J&K disaster-management portal",
+          "url": "https://jkdma.jk.gov.in/",
+          "type": "website"
+        }
+      ]
+    }
+  },
+  "national_links": [
+    {
+      "name": "NDRF Official Website",
+      "service": "Official NDRF information, updates and services",
+      "url": "https://www.ndrf.gov.in/en",
+      "type": "website"
+    },
+    {
+      "name": "NDRF Contact & Feedback",
+      "service": "Official NDRF contact page and feedback route",
+      "url": "https://www.ndrf.gov.in/en/contact-us",
+      "type": "website"
+    },
+    {
+      "name": "CPGRAMS Public Grievance Portal",
+      "service": "Lodge and track a public grievance with Government of India / States",
+      "url": "https://pgportal.gov.in/",
+      "type": "grievance"
+    }
+  ]
+}

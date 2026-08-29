@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Dhara — Flash Flood Early Warning | Hill States</title>
+<meta name="description" content="Hyper-local flash flood prediction and early warning for Himalayan hill states." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+<link rel="stylesheet" href="/static/css/style.css" />
+</head>
+<body>
+<header class="site-header">
+  <div class="contour-watermark" aria-hidden="true"></div>
+  <div class="header-inner">
+    <div class="brand">
+      <span class="brand-mark">धारा</span>
+      <div class="brand-text"><span class="brand-name">Dhara</span><span class="brand-tagline">Flash Flood Early Warning · Hill States</span></div>
+    </div>
+    <nav class="header-status" aria-label="System status">
+      <span class="status-dot" id="live-dot"></span><span id="status-text">Connecting to live data…</span>
+      <span class="header-divider">|</span><span id="clock">--:--:--</span>
+      <button class="header-chat" id="chat-toggle" aria-expanded="false" aria-controls="chat-panel"><span>✦</span> Flash Flood Assist</button>
+    </nav>
+  </div>
+</header>
+
+<main class="dashboard">
+  <aside class="sidebar" aria-label="Monitored locations">
+    <div class="sidebar-head"><div><p class="section-kicker">LIVE MONITOR</p><h2>Watchlist</h2></div><select id="state-filter" aria-label="Filter by state"><option value="all">All states</option><option value="Himachal Pradesh">Himachal Pradesh</option><option value="Jammu & Kashmir">Jammu &amp; Kashmir</option><option value="Ladakh">Ladakh</option><option value="Uttarakhand">Uttarakhand</option></select></div>
+    <div class="legend"><span class="legend-item"><i class="dot" style="background:#2E7D4F"></i>Safe</span><span class="legend-item"><i class="dot" style="background:#D9A400"></i>Watch</span><span class="legend-item"><i class="dot" style="background:#E07A1F"></i>Warning</span><span class="legend-item"><i class="dot" style="background:#C13B2E"></i>Danger</span><span class="legend-item"><i class="dot" style="background:#7A2020"></i>Severe</span></div>
+    <ul class="location-list" id="location-list"><li class="skeleton">Loading locations…</li></ul>
+    <div class="system-card"><div class="system-title">SYSTEM STATUS</div><div><span class="ok-dot"></span> All systems operational</div><div class="system-row">● 12 / 12 data streams <b>Active</b></div><div class="system-row">◉ Predictive engine <b>Running</b></div><div class="system-row">↻ Last update <b id="sidebar-update">—</b></div></div>
+  </aside>
+
+  <section class="workspace">
+    <div class="workspace-head"><div><p class="section-kicker">HIMALAYAN PREDICTION COMMAND VIEW</p><h1>Flash Flood Forecast</h1></div><div class="workspace-actions"><button class="view-btn active" id="overview-btn">Overview</button><button class="view-btn" id="satellite-btn">Satellite</button></div></div>
+    <div class="kpi-grid" id="kpi-grid">
+      <article class="kpi-card"><span class="kpi-label">Highest 6h Prediction</span><strong id="kpi-risk">—</strong><span id="kpi-risk-sub">Waiting for live data</span></article>
+      <article class="kpi-card"><span class="kpi-label">Rainfall · 6 hrs</span><strong id="kpi-rain">—</strong><span id="kpi-rain-sub">Across monitored points</span></article>
+      <article class="kpi-card"><span class="kpi-label">Soil Moisture</span><strong id="kpi-soil">—</strong><span id="kpi-soil-sub">Live modelled moisture</span></article>
+      <article class="kpi-card"><span class="kpi-label">Predicted Alerts</span><strong id="kpi-alerts">—</strong><span id="kpi-alerts-sub">Watch or above</span></article>
+    </div>
+    <div class="map-wrap">
+      <div class="map-toolbar"><div><span class="map-title">LIVE PREDICTION MAP</span><span class="map-mode" id="map-mode-label">Street / terrain</span></div><div class="map-tools"><button id="locate-active">Focus city</button><button id="satellite-small">Satellite</button></div></div>
+      <div id="map"></div>
+      <div class="map-caption"><span>Tap a marker to open its city intelligence panel.</span><span>Satellite imagery: Esri World Imagery</span></div>
+    </div>
+    <div class="bottom-grid dashboard-analytics">
+      <article class="panel chart-panel"><div class="panel-head"><div><p class="section-kicker">RISK BY LOCATION</p><h3>Where attention is needed</h3><p class="panel-note">A comparison of predicted flash-flood probabilities for the next 6 hours.</p></div></div><div class="chart-box"><canvas id="risk-bar-chart" aria-label="Bar chart of current risk scores"></canvas></div></article>
+      <article class="panel chart-panel"><div class="panel-head"><div><p class="section-kicker">ALERT MIX</p><h3>How the watchlist looks today</h3><p class="panel-note">Share of monitored locations by predicted alert level.</p></div></div><div class="pie-wrap"><canvas id="risk-pie-chart" aria-label="Pie chart of alert band distribution"></canvas><div id="pie-center" class="pie-center"><strong>—</strong><span>locations</span></div></div></article>
+      <article class="panel priority-panel"><div class="panel-head"><div><p class="section-kicker">TOP PRIORITIES</p><h3>Places worth checking first</h3><p class="panel-note">Click a place to open its full city view.</p></div></div><div id="priority-list" class="priority-list"></div></article>
+    </div>
+  </section>
+
+  <aside class="detail-drawer" id="detail-drawer" aria-live="polite">
+    <div class="detail-empty" id="detail-empty"><p class="section-kicker">CITY INTELLIGENCE</p><h3>Select a monitored location</h3><p>Choose a marker or watchlist item to view the next-6-hour prediction, forecast trajectory, model drivers, satellite imagery and field evidence.</p></div>
+    <div class="detail-content" id="detail-content" hidden></div>
+  </aside>
+</main>
+
+<div class="chat-panel" id="chat-panel" hidden aria-hidden="true">
+  <div class="chat-panel-head"><div><strong>Flash Flood Assist</strong><span class="chat-sub">Prevention · Preparedness · Alerts</span></div><button class="chat-close" id="chat-close" aria-label="Close chat">×</button></div>
+  <div class="chat-messages" id="chat-messages"></div>
+  <div class="chat-suggestions" id="chat-suggestions"><button data-q="What should be in my emergency kit?">Emergency kit</button><button data-q="What do the alert colours mean?">Alert colours</button><button data-q="What should I do during a flash flood?">During a flood</button></div>
+  <form class="chat-input-row" id="chat-form"><input type="text" id="chat-input" placeholder="Ask a question…" autocomplete="off" /><button type="submit" aria-label="Send">→</button></form>
+</div>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js"></script>
+<script src="/static/js/app.js"></script><script src="/static/js/chatbot.js"></script>
+</body></html>

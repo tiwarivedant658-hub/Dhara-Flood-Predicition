@@ -1,0 +1,69 @@
+{
+  "_readme": "Rule-based knowledge base for the chatbot. Each entry has 'keywords' (matched against the user's message, case-insensitive) and 'answer'. backend/chatbot.py scores each entry by keyword overlap and returns the best match, falling back to 'default' when nothing scores above the threshold. Edit this file to expand the chatbot -- no code changes needed.",
+  "greeting": [
+    "Namaste! I'm the Flash Flood Assist bot. Ask me about warning colours, what to pack in a go-bag, what to do during a flood, or how these forecasts are made."
+  ],
+  "default": "I'm not certain about that one yet. Try asking me about: alert levels, evacuation steps, emergency kit, causes of flash floods, what to do during/after a flood, or how this system predicts risk.",
+  "entries": [
+    {
+      "id": "alert-levels",
+      "keywords": ["alert", "colour", "color", "level", "grading", "meaning of colours", "green yellow orange red"],
+      "answer": "This system uses five alert bands: Green (Safe - normal monitoring), Yellow (Watch - stay informed, minor risk building), Orange (Warning - be prepared to move, risk is rising fast), Red (Danger - evacuate low-lying/riverside areas now), and Maroon (Severe - life-threatening, follow local authority instructions immediately). The colour on the map updates as fresh rainfall and soil-moisture data comes in."
+    },
+    {
+      "id": "what-is-flash-flood",
+      "keywords": ["what is a flash flood", "define", "definition", "meaning of flash flood"],
+      "answer": "A flash flood is sudden, fast-rising flooding that develops within minutes to a few hours of intense rainfall, cloudburst, glacial lake outburst, or landslide-dam failure. Unlike river floods, there is very little lead time, which is why hyper-local, early prediction matters so much in hilly terrain."
+    },
+    {
+      "id": "causes",
+      "keywords": ["cause", "causes", "why does it happen", "reason", "trigger"],
+      "answer": "In these hill states, flash floods are usually triggered by a combination of: short-duration intense rainfall or cloudbursts, saturated/steep slopes with low soil cohesion, blocked or narrow drainage channels, glacial lake outburst floods (GLOF) at high altitude, deforestation and unstable construction on slopes, and sometimes landslide debris temporarily damming a stream that then bursts."
+    },
+    {
+      "id": "before-prevention",
+      "keywords": ["prevent", "prevention", "before flood", "preparedness", "reduce risk", "avoid"],
+      "answer": "Before the season: know your area's evacuation route and nearest high ground, keep an emergency kit ready, avoid building or parking near stream banks and steep cut-slopes, clear drains/culverts near your home, register for SMS/siren alerts from your local disaster authority, and agree on a family meeting point in case phones don't work."
+    },
+    {
+      "id": "during-flood",
+      "keywords": ["during flood", "what to do now", "flooding now", "water rising", "in a flood"],
+      "answer": "During a flash flood: move to higher ground immediately, do not wait for water to visibly rise. Never walk or drive through moving water - 15cm can knock you over and 30cm can float a car. Stay away from riverbanks, bridges and culverts. If trapped in a building, go to the highest level (not a closed attic). Keep your phone charged and dial 112 (or 1078/1070 disaster helplines) if in danger."
+    },
+    {
+      "id": "after-flood",
+      "keywords": ["after flood", "post flood", "once water recedes", "cleanup"],
+      "answer": "After a flash flood: don't return home until authorities confirm it's safe. Avoid flood water - it may be contaminated or electrically live. Check your house structure for cracks before entering. Boil or purify drinking water. Report damaged roads/bridges to the local administration. Watch for secondary landslides on saturated slopes for several days afterward."
+    },
+    {
+      "id": "emergency-kit",
+      "keywords": ["kit", "requirement", "requirements", "necessary", "essentials", "go bag", "bag", "supplies", "pack"],
+      "answer": "A basic go-bag should have: torch with spare batteries, power bank, whistle, first-aid kit + essential medicines, drinking water and dry snacks for 2-3 days, copies of ID/insurance papers in a waterproof pouch, cash in small denominations, a warm layer/raincoat, and a battery or hand-crank radio. Keep it near the door, not in the basement or ground floor store room."
+    },
+    {
+      "id": "warning-signs",
+      "keywords": ["signs", "warning signs", "how to know", "indicators", "symptoms"],
+      "answer": "Watch for: sudden increase in stream flow or a stream turning muddy, unusual rumbling or roaring sound from upstream, sudden drop in a stream's level (may mean an upstream debris dam), heavy or prolonged rain in the catchment above you, and cracks or bulging on slopes above your settlement."
+    },
+    {
+      "id": "how-system-works",
+      "keywords": ["how does this work", "how is risk calculated", "prediction", "model", "algorithm", "system work", "data sources"],
+      "answer": "This prototype combines live rainfall intensity and forecast (Open-Meteo), live soil moisture at multiple depths, a static slope-stability/terrain baseline for each settlement, and a historical hazard-event weight, into a single 0-100 risk score. The score is mapped to the five colour bands you see on the map. It's a hackathon-stage model - production deployment should add IoT river-gauge sensors, satellite soil moisture, and validated slope stability GIS layers."
+    },
+    {
+      "id": "glof",
+      "keywords": ["glof", "glacial lake", "glacier", "outburst"],
+      "answer": "A Glacial Lake Outburst Flood (GLOF) happens when a lake dammed by glacial ice or moraine suddenly breaches, releasing a huge volume of water downstream within minutes. Ladakh and upper Himachal/Uttarakhand basins are particularly exposed. GLOF risk needs satellite monitoring of lake area in addition to rainfall-based prediction."
+    },
+    {
+      "id": "helpline",
+      "keywords": ["helpline", "number", "call", "emergency number", "contact", "sos"],
+      "answer": "In an emergency call 112 (national emergency number), or the state disaster helplines: 1070/1077 (state EOC, varies by state), and 1078 for NDMA. Always also follow instructions broadcast by your local Panchayat/ward officer - they know the specific safe routes for your area."
+    },
+    {
+      "id": "chatbot-identity",
+      "keywords": ["who are you", "what are you", "your name", "bot"],
+      "answer": "I'm the Flash Flood Assist chatbot built for this prototype (SIH PS 192). I answer questions about flash flood prevention, preparedness, and how the map's risk grading works. For live emergencies always follow official authority instructions, not a chatbot."
+    }
+  ]
+}

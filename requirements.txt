@@ -1,0 +1,12 @@
+Flask==3.0.3
+Flask-Cors==4.0.1
+requests==2.32.3
+python-dotenv==1.0.1
+Pillow==12.3.0
+gunicorn==23.0.0
+reportlab==4.4.9
+
+scikit-learn==1.8.0
+numpy==2.4.1
+
+joblib==1.5.2

@@ -1,0 +1,21 @@
+{
+  "model": "RandomForestClassifier",
+  "version": "DHARA offline bundled prototype",
+  "trained_on": "synthetic prototype data",
+  "features": [
+    "rain_1h",
+    "rain_3h",
+    "rain_6h",
+    "rain_24h",
+    "rain_72h",
+    "soil_wetness",
+    "soil_change",
+    "slope_score",
+    "elevation_norm",
+    "twi_proxy",
+    "river_proximity",
+    "historical_hazard"
+  ],
+  "label": "verified-event placeholder for offline demo",
+  "replacement_note": "Replace data/research/raw/*.csv with verified historical sources, then run scripts/build_dataset.py and scripts/train_model.py."
+}
